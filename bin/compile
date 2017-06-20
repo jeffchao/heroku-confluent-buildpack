@@ -34,7 +34,7 @@ if ! [ $? ]; then
 fi
 
 if [[ $ARCHIVE_URL =~ \.deb.tar.gz$ ]]; then
-  dkpg -x heroku-kafka-${CONFLUENT_VERSION} $BUILD_DIR/
+  dpkg -x heroku-kafka-${CONFLUENT_VERSION} $BUILD_DIR/
 else
   cp -a confluent-${CONFLUENT_VERSION}/* $BUILD_DIR/
 fi
