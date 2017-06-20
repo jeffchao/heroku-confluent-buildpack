@@ -33,7 +33,12 @@ if ! [ $? ]; then
     exit 1
 fi
 
-cp -a confluent-${CONFLUENT_VERSION}/* $BUILD_DIR/
+if [[ $ARCHIVE_URL =~ \.deb.tar.gz$ ]]; then
+  dkpg -x heroku-kafka-${CONFLUENT_VERSION} $BUILD_DIR/
+else
+  cp -a confluent-${CONFLUENT_VERSION}/* $BUILD_DIR/
+fi
+
 
 echo "Copied Confluent ${CONFLUENT_VERSION} successfully" | indent
 
