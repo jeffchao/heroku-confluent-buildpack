@@ -35,11 +35,11 @@ fi
 
 if [[ $ARCHIVE_URL =~ \.deb.tar.gz$ ]]; then
   dpkg -x heroku-kafka-${CONFLUENT_VERSION}.deb $BUILD_DIR/
-  ln -s ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-run-class ${BUILD_DIR}/.heroku/bin/kafka-run-class
-  ln -s ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-console-producer ${BUILD_DIR}/.heroku/bin/kafka-console-producer
-  ln -s ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-console-consumer ${BUILD_DIR}/.heroku/bin/kafka-console-consumer
-  ln -s ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-producer-perf-test ${BUILD_DIR}/.heroku/bin/kafka-producer-perf-test
-  ln -s ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-consumer-perf-test ${BUILD_DIR}/.heroku/bin/kafka-consumer-perf-test
+  ln -s /app/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-run-class ${BUILD_DIR}/.heroku/bin/kafka-run-class
+  ln -s /app/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-console-producer ${BUILD_DIR}/.heroku/bin/kafka-console-producer
+  ln -s /app/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-console-consumer ${BUILD_DIR}/.heroku/bin/kafka-console-consumer
+  ln -s /app/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-producer-perf-test ${BUILD_DIR}/.heroku/bin/kafka-producer-perf-test
+  ln -s /app/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-consumer-perf-test ${BUILD_DIR}/.heroku/bin/kafka-consumer-perf-test
 else
   cp -a confluent-${CONFLUENT_VERSION}/* $BUILD_DIR/
 fi
