@@ -40,6 +40,7 @@ if [[ $ARCHIVE_URL =~ \.deb.tar.gz$ ]]; then
   cp ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-console-consumer ${BUILD_DIR}/.heroku/bin/kafka-console-consumer
   cp ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-producer-perf-test ${BUILD_DIR}/.heroku/bin/kafka-producer-perf-test
   cp ${BUILD_DIR}/usr/bin/kafka-${CONFLUENT_VERSION}/kafka-consumer-perf-test ${BUILD_DIR}/.heroku/bin/kafka-consumer-perf-test
+  cp ${BUILD_DIR}/usr/share/java/kafka-${CONFLUENT_VERSION}/* ${BUILD_DIR}/.jdk/lib/
 else
   cp -a confluent-${CONFLUENT_VERSION}/* $BUILD_DIR/
 fi
